@@ -11,7 +11,13 @@ const cssmin = require('gulp-cssmin');
 
 
 function html() {
-    return src('./src/index.html')
+    return src([
+        './src/index.html',
+        './src/success.html',
+        './src/error.html',
+        './src/statement.html',
+        './src/all_statement.html'
+    ])
         .pipe(rigger())
         .pipe(dest('./build/'))
         .pipe(reload({stream: true}))
